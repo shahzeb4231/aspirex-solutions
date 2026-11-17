@@ -1,0 +1,78 @@
+/* Progress page: extra styles only. Everything else comes from style.css */
+nav a.on{color:var(--gold2)!important}
+
+.phero{position:relative;padding:150px 0 70px;overflow:hidden}
+.phero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.phero h1{margin-bottom:22px}
+.hero-card{padding:34px;border-color:rgba(226,182,89,.5);background:linear-gradient(160deg,rgba(226,182,89,.12),var(--card));animation:rise 1s .6s both}
+.hero-card small{display:block;color:var(--mu)}
+.hero-card b{display:block;margin:4px 0 12px;font-size:clamp(2.6rem,8vw,3.8rem);background:linear-gradient(120deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-card p{color:var(--tx)}
+.hero-card .two{display:flex;gap:20px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.hero-card .two div{flex:1}
+.hero-card .two strong{display:block;font-family:Sora,sans-serif;font-size:1.2rem}
+.hero-card .two span{color:var(--mu);font-size:.85rem}
+
+.kpis{padding:10px 0 0}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi-grid .stat{grid-column:auto}
+.kpi-grid .stat b{font-size:clamp(2rem,4vw,2.8rem)}
+.kpi-grid .stat b.txt{font-size:clamp(1.5rem,3vw,2rem);line-height:1.5}
+
+.phead{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:22px;margin-bottom:6px}
+.phead .sub{margin-bottom:0}
+.fchips{display:flex;flex-wrap:wrap;gap:8px}
+.fchip{font:inherit;font-weight:600;font-size:.88rem;padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--mu);cursor:pointer;transition:.2s}
+.fchip:hover{color:var(--tx);border-color:var(--gold)}
+.fchip.on{background:linear-gradient(135deg,var(--gold),var(--gold2));border-color:transparent;color:#1b1405}
+
+/* Every card and every image is the same size */
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.pcard{display:flex;flex-direction:column;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);background:var(--card);transition:transform .3s,border-color .3s,box-shadow .3s,opacity .5s}
+.pcard:hover{transform:translateY(-5px);border-color:rgba(226,182,89,.55);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.pcard.hide{display:none}
+.pshot{position:relative;display:block;width:100%;aspect-ratio:4/3;padding:0;border:0;background:linear-gradient(135deg,#142456,#0D1430);cursor:zoom-in;overflow:hidden}
+.pshot img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s}
+.pcard:hover .pshot img{transform:scale(1.06)}
+.pshot::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,rgba(10,15,30,.8));pointer-events:none}
+.zoom{position:absolute;right:10px;bottom:10px;z-index:2;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(13,20,48,.75);border:1px solid var(--line);backdrop-filter:blur(8px)}
+.zoom svg{width:16px;height:16px;fill:none;stroke:var(--gold2);stroke-width:2.2;stroke-linecap:round}
+.pinfo{display:flex;flex-direction:column;gap:8px;padding:18px 18px 20px;flex:1}
+.ptag{align-self:flex-start;padding:3px 11px;border-radius:999px;font-size:.74rem;font-weight:600;color:var(--gold2);background:rgba(226,182,89,.12);border:1px solid rgba(226,182,89,.3)}
+.pinfo h3{font-size:1.05rem}
+.pinfo p{color:var(--mu);font-size:.88rem;line-height:1.55}
+.pfacts{list-style:none;margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pfacts li{font-size:.74rem;line-height:1.3;color:var(--mu)}
+.pfacts b{display:block;font-family:Sora,sans-serif;font-size:.95rem;color:var(--tx)}
+
+.steps .tile h3{margin-bottom:8px}
+
+/* Lightbox */
+.plb{position:fixed;inset:0;z-index:400;display:grid;place-items:center;padding:20px;background:rgba(5,8,18,.94);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:.3s}
+.plb.open{opacity:1;visibility:visible}
+.plb figure{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:min(1100px,100%)}
+.plb img{max-width:100%;max-height:74vh;border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 90px rgba(0,0,0,.6)}
+.plb figcaption{text-align:center;max-width:620px}
+.plb figcaption b{display:block;font-size:1.1rem}
+.plb figcaption span{color:var(--mu);font-size:.9rem}
+.plb-btn{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:rgba(13,20,48,.8);color:var(--gold2);display:grid;place-items:center;cursor:pointer;font-size:1.6rem;line-height:1;transition:.2s}
+.plb-btn:hover{background:var(--gold);color:#1b1405}
+.plb-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.plb-x{top:16px;right:16px}.plb-p{left:16px;top:50%;transform:translateY(-50%)}.plb-n{right:16px;top:50%;transform:translateY(-50%)}
+
+@media(max-width:1060px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){
+  .phero{padding-top:128px}
+  .phero-grid{grid-template-columns:1fr}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:14px}
+}
+@media(max-width:600px){
+  .plb-p,.plb-n{top:auto;bottom:22px;transform:none}.plb-p{left:30%}.plb-n{right:30%}
+}
+@media(max-width:520px){
+  .pgrid{grid-template-columns:1fr}
+  .hero-card{padding:26px 22px}
+  .phero .cta .btn{flex:1 1 100%;text-align:center}
+  .kpi-grid .stat{padding:20px}
+}
